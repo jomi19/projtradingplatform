@@ -1,0 +1,126 @@
+@import "./../../style/variables.scss";
+
+$buttonSize: 3.5em;
+$svgSize: $buttonSize - 1.5em;
+$chatHeight: 400px;
+$chatHeaderHeight: 45px;
+$indputHeight: 57px;
+$chatContentHeight: $chatHeight - $chatHeaderHeight - $indputHeight;
+
+
+.chatButton {
+    background-color: $darkBlue;
+    display: flex;
+    position: fixed;
+    right: 2em;
+    bottom: 1em;
+    width: $buttonSize;
+    height: $buttonSize;
+    border-radius: 50%;
+    cursor: pointer;
+    align-self: center;
+    justify-content: center;
+    
+    & svg {
+        height: $svgSize;
+        color: $accent;
+        align-self: center;
+        transform: rotate(90deg);
+        transform: scaleX(-1);
+    }
+}
+
+.wrapChat {
+    position: fixed;
+    transform-origin: bottom left;
+    right: 5.6em;
+    bottom: 3em;
+
+}
+.chatBox {
+    position: relative;
+
+    border: 2px solid $darkBlue;
+    width: 350px;
+    height: $chatHeight;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 50px;
+
+
+    & input {
+        position: absolute;
+        margin-left: 2em;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        padding: 0.2em;
+        border-top: 2px solid $darkBlue;
+        height: 2em;
+        font-size: 1em;
+    }
+
+    & .send {
+        position: absolute;
+        border-bottom-left-radius: 50px;
+        bottom: 0;
+        width: 20%;
+        height:$indputHeight;
+        background-color: $blue;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+}
+
+.chatHeader {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    background-color: $darkBlue;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: $chatHeaderHeight;
+}
+
+.chatContent {
+    z-index: 999;
+    text-align: left;
+    margin-left: 0.5em;
+    overflow-y: scroll;
+    height: $chatContentHeight;
+}
+
+@media screen and (max-width: 900px) {
+    .chatButton {
+        background-color: $darkBlue;
+        display: flex;
+        position: fixed;
+        right: 0;
+        bottom: 0em;
+        width: $buttonSize / 1.5;
+        height: $buttonSize / 1.5;
+        border-radius: 10%;
+        cursor: pointer;
+        align-self: center;
+        justify-content: center;
+        
+        & svg {
+            height: $svgSize;
+            color: $accent;
+            align-self: center;
+            transform: rotate(90deg);
+            transform: scaleX(-1);
+        }
+    }
+    .wrapChat {
+        position: fixed;
+        transform-origin: bottom left;
+        right: 0em;
+        bottom: 1.6em;
+    }
+}

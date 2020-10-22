@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+html {
+    background-color: $darkBlue;
+    font-size: 1.4em;
+}
+
+.main {
+    min-height: 95vh;
+    width: 1200px;
+    background-color: white;
+    margin: 1em auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px darken(white, $amount: 20%);
+
+}
+
+.App {
+    background-color: darken($color: white, $amount: 10%);
+}
+
+@media screen and (max-width: 1200px) {
+    .main {
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+}

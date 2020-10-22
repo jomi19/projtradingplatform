@@ -1,0 +1,23 @@
+.userProfileMenu {
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+
+    & a {
+        text-decoration: none;
+        font-weight: bold;
+        color: grey;
+        transition-duration: 100ms;
+
+        &:hover {
+            color: green;
+        }
+    }
+
+    & li {
+        list-style: none;
+        display: inline;
+        margin: 2em;
+    }
+}
